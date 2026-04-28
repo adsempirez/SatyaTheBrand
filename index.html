@@ -55,6 +55,16 @@ body::before{
     50%{transform:translateY(-12px);}
 }
 
+/* 🔥 NEW SUBSCRIBER TEXT */
+.sub-count{
+    margin-top:10px;
+    font-size:14px;
+    font-weight:bold;
+    color:#a855f7;
+    letter-spacing:1px;
+    text-shadow:0 0 10px #a855f7;
+}
+
 /* SUBTITLE */
 .subtitle{
     font-size:12px;
@@ -179,6 +189,11 @@ body::before{
     <!-- LOGO -->
     <img src="WhatsApp Image 2026-04-28 at 21.41.53.jpeg" class="logo">
 
+    <!-- 🔥 SUBSCRIBER COUNT -->
+    <div class="sub-count">
+        <span id="counter">0</span>K+ Subscribers
+    </div>
+
     <!-- SUBTITLE -->
     <p class="subtitle">TELEGRAM CRICKET ANALYSIS CHANNEL</p>
 
@@ -221,6 +236,23 @@ body::before{
     </a>
 
 </div>
+
+<script>
+/* 🔥 COUNTER ANIMATION */
+let count = 0;
+let target = 100;
+let speed = 20;
+
+let counter = document.getElementById("counter");
+
+let update = setInterval(()=>{
+    count++;
+    counter.innerText = count;
+    if(count >= target){
+        clearInterval(update);
+    }
+}, speed);
+</script>
 
 </body>
 </html>
